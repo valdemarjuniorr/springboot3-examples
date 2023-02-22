@@ -1,0 +1,12 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+events:
+  exchange: notify.new.user
+  queues:
+    new.user: notified.new.user
+    company.new.user: notified.company.new.user
