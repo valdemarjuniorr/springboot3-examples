@@ -5,7 +5,7 @@
 - Java 19
 - docker-compose
 - Springboot 3.0.3
-- MongBD
+- MongoBD
 
 ## Description
 
