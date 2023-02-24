@@ -1,10 +1,10 @@
-# RabbitMQ Example
+# RabbitMQ fanout example
 
 ## Features
 
 - Java 19
 - docker-compose
-- Springboot 3.0.2
+- Springboot 3.0.3
 - RabbitMQ 3.11.9
 
 ## Description

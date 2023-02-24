@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  mongodb:
+    image: bitnami/mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/.data/db:/data/db
+    environment:
+      - MONGODB_USERNAME=user
+      - MONGODB_PASSWORD=password
+      - MONGODB_ROOT_USER=root
+      - MONGODB_ROOT_PASSWORD=passroot
+      - MONGODB_DATABASE=users
+volumes:
+  mongodata:
