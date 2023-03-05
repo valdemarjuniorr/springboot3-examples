@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: Service A
+
+service:
+  service-b-url: http://localhost:8181/b
+
+## standard configuration
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+resilience4j:
+  circuitbreaker:
+    instances:
+      serviceA: # same name defined in @CircuitBreaker(name= "ServiceA") annotation
+        registerHealthIndicator: true # state of the circuit breaker
+        eventConsumerBufferSize: 10 # number of events that we should consume
+        failureRateThreshold: 50 # in percentage. More than 50% of errors, the circuit will change the status
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true # change to open to half open automatically
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3 # numbers of call that should stay in half open state
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+  retry:
+    instances:
+      serviceA:
+        maxAttempts: 3
+        wait-duration: 5s
+  ratelimiter:
+    instances:
+      serviceA:
+        registerHealthIndicator: false
+        limitForPeriod: 10
+        limitRefreshPeriod: 10s
+        timeoutDuration: 3s
+
+
