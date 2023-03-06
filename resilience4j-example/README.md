@@ -3,7 +3,7 @@
 ## Features
 
 - Java 19
-- Springboot 3.0.3
+- Springboot 3.0.4
 
 ## Description
 

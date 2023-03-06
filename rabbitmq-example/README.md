@@ -4,7 +4,7 @@
 
 - Java 19
 - docker-compose
-- Springboot 3.0.3
+- Springboot 3.0.4
 - RabbitMQ 3.11.9
 
 ## Description
