@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+volumes:
+  prometheus-data:
