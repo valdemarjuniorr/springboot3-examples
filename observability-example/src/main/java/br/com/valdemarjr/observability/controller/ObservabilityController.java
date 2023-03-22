@@ -1,7 +1,6 @@
-package br.com.valdemarjr.obsersability.controller;
+package br.com.valdemarjr.observability.controller;
 
-import br.com.valdemarjr.obsersability.controller.service.ObservabilityService;
-import io.micrometer.observation.annotation.Observed;
+import br.com.valdemarjr.observability.service.ObservabilityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("observability")
+@RequestMapping("/observability")
 public class ObservabilityController {
 
     private final ObservabilityService service;

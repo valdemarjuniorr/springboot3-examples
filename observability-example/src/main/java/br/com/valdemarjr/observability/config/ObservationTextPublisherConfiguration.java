@@ -1,4 +1,4 @@
-package br.com.valdemarjr.obsersability.config;
+package br.com.valdemarjr.observability.config;
 
 import io.micrometer.observation.Observation;
 import io.micrometer.observation.ObservationHandler;

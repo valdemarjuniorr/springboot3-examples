@@ -1,4 +1,4 @@
-package br.com.valdemarjr.obsersability.controller.service;
+package br.com.valdemarjr.observability.service;
 
 import io.micrometer.observation.annotation.Observed;
 import lombok.extern.slf4j.Slf4j;
