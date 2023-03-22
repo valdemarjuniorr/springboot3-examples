@@ -74,6 +74,7 @@ In the application's log has some entries like:
 : onStop called
 ```
 Those logs represent observability metric state flow as shown in the diagram:
+
 ![observability_flow.png](assets%2Fobservability_flow.png)
 
 Those states flow are configured in `SimpleLoggingHandler.java` class.
