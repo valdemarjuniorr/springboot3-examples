@@ -1,0 +1,4 @@
+websocket:
+  broker: /notify
+  destination-prefixes: /app
+  stomp-endpoint: /websocket-server
