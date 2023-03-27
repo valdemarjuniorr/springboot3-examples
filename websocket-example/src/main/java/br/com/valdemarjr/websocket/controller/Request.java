@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 class Request {
-  private String title;
-  private String content;
+  private String name;
+  private String message;
 }

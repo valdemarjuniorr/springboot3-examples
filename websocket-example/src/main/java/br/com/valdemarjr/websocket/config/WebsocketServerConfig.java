@@ -16,9 +16,9 @@ public class WebsocketServerConfig implements WebSocketMessageBrokerConfigurer {
 
   @Override
   public void configureMessageBroker(MessageBrokerRegistry registry) {
-    // First, we enable an in-memory message broker to carry the messages back to the client on
+    registry.enableSimpleBroker(config.getBrokerPath());
+    // We enable an in-memory message broker to carry the messages back to the client on
     // destinations prefixed with “/topic”.
-    registry.enableSimpleBroker(config.getBroker());
     registry.setApplicationDestinationPrefixes(config.getDestinationPrefixes());
   }
 

@@ -10,9 +10,10 @@
     <script src="/app.js"></script>
 </head>
 <body>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
-    enabled. Please enable
-    Javascript and reload this page!</h2>
+<noscript>
+    <h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable Javascript and reload this page!
+    </h2>
 </noscript>
 <div id="main-content" class="container">
     <div class="row">
@@ -26,11 +27,15 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-6">
-            <form class="form-inline">
+            <form>
                 <div class="form-group">
                     <label for="name">What is your name?</label>
-                    <input type="text" id="name" class="form-control" placeholder="Your name here...">
+                    <input type="text" id="name" class="form-control" placeholder="Your name here..."> <br/>
+                    <label for="name">What is your message?</label>
+                    <input type="text" id="message" class="form-control" placeholder="Your message here...">
                 </div>
                 <button id="send" class="btn btn-default" type="submit">Send</button>
             </form>
@@ -41,10 +46,11 @@
             <table id="conversation" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Greetings</th>
+                    <th>Name</th>
+                    <th>Message</th>
                 </tr>
                 </thead>
-                <tbody id="greetings">
+                <tbody id="messages">
                 </tbody>
             </table>
         </div>

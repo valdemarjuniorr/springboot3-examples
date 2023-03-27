@@ -13,7 +13,7 @@ public class NotificationController {
   @MessageMapping("/topic")
   @SendTo("/notify/message")
   public Message notify(Request request) {
-    log.info("Incoming request {}", request.getContent());
-    return new Message(request.getTitle(), request.getContent());
+    log.info("Incoming request {}", request);
+    return new Message(request.getName(), request.getMessage());
   }
 }

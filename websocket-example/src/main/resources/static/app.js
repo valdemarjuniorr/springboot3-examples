@@ -13,13 +13,15 @@ function setConnected(connected) {
 }
 
 function connect() {
+    // same as set in websocket.stomp-endpoint property in application.yml
     var socket = new SockJS('/websocket-server');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/notify/message', function (greeting) {
-            showGreeting(JSON.parse(greeting.body).content);
+        // same as set in @SendTo annotation in NotificationController.notify method.
+        stompClient.subscribe('/notify/message', function (notification) {
+            showNotification(JSON.parse(notification.body));
         });
     });
 }
@@ -33,11 +35,11 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send('/app/topic', {}, JSON.stringify({'content': $("#name").val()}));
+    stompClient.send('/app/topic', {}, JSON.stringify({'name': $("#name").val(), 'message': $("#message").val()}));
 }
 
-function showGreeting(message) {
-    $("#greetings").append("<tr><td>" + message + "</td></tr>");
+function showNotification(notification) {
+    $("#messages").append("<tr><td>" + notification.name + "</td><td>" + notification.content + "</td></tr>");
 }
 
 $(function () {
