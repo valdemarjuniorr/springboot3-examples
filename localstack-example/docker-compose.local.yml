@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  localstack:
+    image: localstack/localstack
+    network_mode: bridge
+    ports:
+      - "127.0.0.1:4566:4566"            # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+    environment:
+      - DEBUG=1
+      - SERVICES=sns,sqs
+      - DEFAULT_REGION=us-east-1
+    volumes:
+      - "${TEMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/scripts/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
