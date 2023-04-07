@@ -24,7 +24,7 @@ public class NotificationController {
 
   @PostMapping("/queue")
   public void queue(@RequestBody NotificationRequest request) {
-    log.info("sending message toward SNS...");
+    log.info("sending message toward SQS...");
     service.notifyQueue(request.toDomain());
     log.info("Message sent");
   }

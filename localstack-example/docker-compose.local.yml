@@ -13,4 +13,4 @@ services:
     volumes:
       - "${TEMPDIR:-/tmp/localstack}:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/scripts/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
+      - "/scripts/init-aws.sh:/etc/localstack/init/start.d/init-aws.sh"  # ready hook

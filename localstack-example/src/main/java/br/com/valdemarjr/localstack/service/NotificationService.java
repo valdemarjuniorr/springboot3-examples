@@ -2,11 +2,10 @@ package br.com.valdemarjr.localstack.service;
 
 import br.com.valdemarjr.localstack.config.EventsConfig;
 import br.com.valdemarjr.localstack.domain.NotificationMessage;
-import io.awspring.cloud.sns.core.SnsOperations;
-import io.awspring.cloud.sns.core.SnsTemplate;
-import io.awspring.cloud.sqs.operations.SqsTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.aws.messaging.core.NotificationMessagingTemplate;
+import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
@@ -21,13 +20,9 @@ public class NotificationService {
    * Because of Spring Messaging compatibility, SnsTemplate exposes many methods that you may not
    * need if you don’t need Spring Messaging abstractions
    */
-  private final SnsTemplate snsTemplate;
+  private final NotificationMessagingTemplate snsTemplate;
 
-  /**
-   * In such case, we recommend using SnsOperations - an interface implemented by SnsTemplate, that
-   * exposes a convenient method for sending SNS notification, including support for FIFO topics.
-   */
-  private final SnsOperations snsOperations;
+  private final QueueMessagingTemplate sqsTemplate;
 
 //  private final SqsTemplate sqsTemplate;
 
@@ -48,6 +43,7 @@ public class NotificationService {
   }
 
   public void notifyQueue(NotificationMessage message) {
-//    sqsTemplate.send(config.getQueue(), message);
+    log.info("Notifying qeue {}", config.getQueue());
+    sqsTemplate.convertAndSend(config.getQueue(), message);
   }
 }
