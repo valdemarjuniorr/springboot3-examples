@@ -5,29 +5,18 @@ spring:
       enabled: false
 
 cloud:
-  config.enabled: false
   aws:
+    stack:
+      auto: false
+    region:
+      static: us-east-1
+      auto: false
     credentials:
       access-key: ANUJDEKAVADIYAEXAMPLE
       secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
-    region:
-      static: us-east-1
-    end-point:
+    queue:
       uri: http://localhost:4566
-    sns:
-      enabled: true # default value, it can be omitted
-      #        endpoint: http://localhost:4566
-      region: us-east-1 # default value us-east-1
-    sqs:
-      enabled: true # default value, it can be omitted
-      #        endpoint: http://localhost:4566
-      region: us-east-1 # default value us-east-1
-      listener:
-        max-inflight-messages-per-queue: 10 # default value
-        max-messages-per-poll: 10 # default value
-        poll-timeout: 10 # default value in seconds
 
-# Qeues names
 events:
   topic: notification-topic
   queue: notification-queue
