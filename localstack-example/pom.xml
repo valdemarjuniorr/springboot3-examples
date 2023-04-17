@@ -16,7 +16,6 @@
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.2</spring-cloud.version>
-<!--		<amazon.awssdk>2.20.37</amazon.awssdk>-->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,7 +55,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-aws-messaging</artifactId>
+			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
 			<version>2.2.6.RELEASE</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-aws-autoconfigure -->
@@ -70,21 +69,6 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-
-
-		<!--		<dependency>-->
-<!--			<groupId>software.amazon.awssdk</groupId>-->
-<!--			<artifactId>sqs</artifactId>-->
-<!--			<version>${amazon.awssdk}</version>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>io.awspring.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-aws-starter-sns</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>io.awspring.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-aws-starter-sqs</artifactId>-->
-<!--		</dependency>-->
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -95,20 +79,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-<!--			<dependency>-->
-<!--				<groupId>io.awspring.cloud</groupId>-->
-<!--				<artifactId>spring-cloud-aws-dependencies</artifactId>-->
-<!--				<type>pom</type>-->
-<!--				<scope>import</scope>-->
-<!--				<version>3.0.0-RC2</version>-->
-<!--			</dependency>-->
-<!--			<dependency>-->
-<!--				<groupId>software.amazon.awssdk</groupId>-->
-<!--				<artifactId>bom</artifactId>-->
-<!--				<version>${amazon.awssdk}</version>-->
-<!--				<type>pom</type>-->
-<!--				<scope>runtime</scope>-->
-<!--			</dependency>-->
 		</dependencies>
 	</dependencyManagement>
 
