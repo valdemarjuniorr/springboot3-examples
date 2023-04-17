@@ -8,12 +8,15 @@ cloud:
   aws:
     region:
       static: us-east-1
-      auto: false
     credentials:
       access-key: ANUJDEKAVADIYAEXAMPLE
       secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
-    end-point:
+    endpoint:
       uri: http://localhost:4566
+    sqs:
+      notification-queue:
+        name: notification-queue
+        url: http://localhost:4566/000000000000/notification-queue
 
 events:
   topic: notification-topic

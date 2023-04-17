@@ -8,12 +8,17 @@ import com.amazonaws.services.sns.AmazonSNSAsyncClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
+import org.springframework.cloud.aws.messaging.config.annotation.EnableSqs;
 import org.springframework.cloud.aws.messaging.core.NotificationMessagingTemplate;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
+import org.springframework.cloud.aws.messaging.listener.QueueMessageHandler;
+import org.springframework.cloud.aws.messaging.listener.SimpleMessageListenerContainer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+@EnableSqs
 @Configuration
 public class SQSConfig {
 
@@ -23,7 +28,7 @@ public class SQSConfig {
   @Value("${cloud.aws.credentials.secret-key}")
   private String secretAccessKey;
 
-  @Value("${cloud.aws.end-point.uri}")
+  @Value("${cloud.aws.endpoint.uri}")
   private String host;
 
   @Value("${cloud.aws.region.static}")
@@ -54,6 +59,24 @@ public class SQSConfig {
   @Bean
   public NotificationMessagingTemplate notificationMessagingTemplate(AmazonSNS amazonSNS) {
     return new NotificationMessagingTemplate(amazonSNS);
+  }
+
+  @Bean
+  public QueueMessageHandler queueMessageHandle1111r() {
+    QueueMessageHandlerFactory queueMessageHandlerFactory = new QueueMessageHandlerFactory();
+    queueMessageHandlerFactory.setAmazonSqs(amazonSQSAsync());
+    QueueMessageHandler queueMessageHandler = queueMessageHandlerFactory.createQueueMessageHandler();
+    return queueMessageHandler;
+  }
+
+  @Bean
+  public SimpleMessageListenerContainer simpleMessageListenerContainer111(AmazonSQSAsync amazonSQSAsync) {
+    SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer();
+    simpleMessageListenerContainer.setAmazonSqs(amazonSQSAsync);
+    simpleMessageListenerContainer.setMessageHandler(queueMessageHandle1111r());
+    simpleMessageListenerContainer.setMaxNumberOfMessages(10);
+//    simpleMessageListenerContainer.setTaskExecutor(threadPoolTaskExecutor());
+    return simpleMessageListenerContainer;
   }
 
   private AWSStaticCredentialsProvider getCredentialsProvider() {
