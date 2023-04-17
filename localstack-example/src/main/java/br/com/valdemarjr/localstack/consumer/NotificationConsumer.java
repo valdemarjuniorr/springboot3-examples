@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 public class NotificationConsumer {
 
   @SqsListener(
-      value = "${cloud.aws.sqs.notification-queue.url}",
+      value = "${events.queue}",
       deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
   public void consume(Message<String> message) {
     log.info("consuming message...");
-    log.info("message consumed {}", message);
+    log.info("message consumed {}", message.getPayload());
   }
 }

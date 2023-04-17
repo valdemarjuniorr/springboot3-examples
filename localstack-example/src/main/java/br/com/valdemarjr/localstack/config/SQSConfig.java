@@ -9,7 +9,6 @@ import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
-import org.springframework.cloud.aws.messaging.config.annotation.EnableSqs;
 import org.springframework.cloud.aws.messaging.core.NotificationMessagingTemplate;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.cloud.aws.messaging.listener.QueueMessageHandler;
@@ -18,7 +17,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-@EnableSqs
 @Configuration
 public class SQSConfig {
 
@@ -62,21 +60,18 @@ public class SQSConfig {
   }
 
   @Bean
-  public QueueMessageHandler queueMessageHandle1111r() {
-    QueueMessageHandlerFactory queueMessageHandlerFactory = new QueueMessageHandlerFactory();
+  public QueueMessageHandler queueMessageHandler() {
+    var queueMessageHandlerFactory = new QueueMessageHandlerFactory();
     queueMessageHandlerFactory.setAmazonSqs(amazonSQSAsync());
-    QueueMessageHandler queueMessageHandler = queueMessageHandlerFactory.createQueueMessageHandler();
-    return queueMessageHandler;
+    return queueMessageHandlerFactory.createQueueMessageHandler();
   }
 
   @Bean
-  public SimpleMessageListenerContainer simpleMessageListenerContainer111(AmazonSQSAsync amazonSQSAsync) {
-    SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer();
-    simpleMessageListenerContainer.setAmazonSqs(amazonSQSAsync);
-    simpleMessageListenerContainer.setMessageHandler(queueMessageHandle1111r());
-    simpleMessageListenerContainer.setMaxNumberOfMessages(10);
-//    simpleMessageListenerContainer.setTaskExecutor(threadPoolTaskExecutor());
-    return simpleMessageListenerContainer;
+  public SimpleMessageListenerContainer simpleMessageListenerContainer() {
+    var simpleListenerContainer = new SimpleMessageListenerContainer();
+    simpleListenerContainer.setAmazonSqs(amazonSQSAsync());
+    simpleListenerContainer.setMessageHandler(queueMessageHandler());
+    return simpleListenerContainer;
   }
 
   private AWSStaticCredentialsProvider getCredentialsProvider() {
