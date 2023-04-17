@@ -24,7 +24,7 @@ public class NotificationService {
 
   private final QueueMessagingTemplate sqsTemplate;
 
-//  private final SqsTemplate sqsTemplate;
+  //  private final SqsTemplate sqsTemplate;
 
   void sendNotification() {
     // sends String payload
@@ -33,7 +33,7 @@ public class NotificationService {
     //    snsTemplate.sendNotification("topic-arn", new Person("John", "Doe"), "subject");
     // sends a Spring Messaging Message
     var message =
-            MessageBuilder.withPayload("payload").setHeader("header-name", "header-value").build();
+        MessageBuilder.withPayload("payload").setHeader("header-name", "header-value").build();
     snsTemplate.send("topic-arn", message);
   }
 
@@ -43,7 +43,7 @@ public class NotificationService {
   }
 
   public void notifyQueue(NotificationMessage message) {
-    log.info("Notifying qeue {}", config.getQueue());
+    log.info("Notifying queue {}", config.getQueue());
     sqsTemplate.convertAndSend(config.getQueue(), message);
   }
 }

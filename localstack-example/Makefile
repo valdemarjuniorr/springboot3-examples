@@ -8,6 +8,6 @@ compose-down:
 
 # execute build and run the application with "local" profile
 run:
-	mvnw spring-boot:run -Dspring-boot.run.profiles=local
+	mvn spring-boot:run -Dspring-boot.run.profiles=local
 
 make start: compose-up run
