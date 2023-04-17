@@ -5,7 +5,6 @@ services:
     hostname: localstack
     ports:
       - "127.0.0.1:4566:4566"            # LocalStack Gateway
-      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
     environment:
       - LOCALSTACK_HOST=localstack
       - SKIP_SSL_CERT_DOWNLOAD=1
@@ -18,4 +17,4 @@ services:
     volumes:
       - "/tmp/localstack:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/scripts/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
+      - "./scripts/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
