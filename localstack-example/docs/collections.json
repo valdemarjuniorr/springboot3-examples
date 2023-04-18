@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "992022ec-cff6-4c0d-a1c2-5b2f24fd4bea",
+		"name": "Localstack-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3845895"
+	},
+	"item": [
+		{
+			"name": "Notify Topíc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"Valdemar Jr\",\n    \"to\": \"Notification server\",\n    \"content\": \"Content message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/notify/topic",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notify",
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notify Queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"Valdemar Jr\",\n    \"to\": \"Notification server\",\n    \"content\": \"Content message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/notify/queue",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notify",
+						"queue"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

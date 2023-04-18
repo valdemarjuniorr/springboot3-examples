@@ -59,6 +59,7 @@ public class SQSConfig {
     return new NotificationMessagingTemplate(amazonSNS);
   }
 
+  /** this bean is responsible for listening to the queue and must be defined. */
   @Bean
   public QueueMessageHandler queueMessageHandler() {
     var queueMessageHandlerFactory = new QueueMessageHandlerFactory();
@@ -66,6 +67,7 @@ public class SQSConfig {
     return queueMessageHandlerFactory.createQueueMessageHandler();
   }
 
+  /** this bean is responsible for listening to the queue and must be defined. */
   @Bean
   public SimpleMessageListenerContainer simpleMessageListenerContainer() {
     var simpleListenerContainer = new SimpleMessageListenerContainer();

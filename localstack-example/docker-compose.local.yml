@@ -8,7 +8,6 @@ services:
     environment:
       - LOCALSTACK_HOST=localstack
       - SKIP_SSL_CERT_DOWNLOAD=1
-      - DEBUG=1
       - SERVICES=sns,sqs
       - DOCKER_HOST=unix:///var/run/docker.sock
       - AWS_DEFAULT_REGION=us-east-1
