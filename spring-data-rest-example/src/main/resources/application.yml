@@ -1,0 +1,8 @@
+spring:
+  data:
+    rest:
+      basePath: /api
+      defaultPageSize: 10 # Default 20
+      maxPageSize: 10
+      # check all properties available on https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.changing-other-properties
+
