@@ -73,5 +73,10 @@ Because of the `spring-data-rest-hal-explorer` dependency is enabling the HAL Ex
 
 Check the [blog post](https://www.baeldung.com/spring-rest-hal) about the HAL Explorer.
 
+## Collections
+
+To import all endpoints into [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/) check the
+collection into `docs/collections.json` file.
+
 ## References
 For more details about the profile link, see [Application-Level Profile Semantics (ALPS)](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.alps).
