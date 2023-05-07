@@ -1,9 +1,11 @@
 # Springboot 3 native
 
-## Prequirements
+## Requirements
 
+- [httpie](https://httpie.io/docs/cli)
 - [mvnd](https://github.com/apache/maven-mvnd)
 - [GraalVM](https://www.graalvm.org/downloads/)
+- [Buildpack](https://buildpacks.io/)
 - Java 19
 
 To download the project running:
@@ -33,7 +35,7 @@ In my case, it ran in:
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  11.603 s
+[INFO] Total time:  5.303 s
 [INFO] Finished at: 2023-03-27T11:08:15-03:00
 [INFO] ------------------------------------------------------------------------
 ```
@@ -50,10 +52,54 @@ And it ran faster:
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  8.393 s (Wall Clock)
+[INFO] Total time:  3.384 s (Wall Clock)
 [INFO] Finished at: 2023-03-27T11:08:29-03:00
 [INFO] ------------------------------------------------------------------------
 ```
 
+even faster when it runs `mvnd clean package -DskipTests`:
 
+```
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.408 s (Wall Clock)
+[INFO] Finished at: 2023-05-07T10:37:55-03:00
+[INFO] ------------------------------------------------------------------------
+```
 
+## Start up
+
+Let's see how long does it take to startup. Run the command below:
+`
+mvn spring-boot:run
+`
+And the result was `1.737 seconds` as showed below:
+
+```
+INFO 8488 --- [  restartedMain] c.e.demo.SpringBoot3NativeApplication    : Started SpringBoot3NativeApplication in 1.737 seconds (process running for 2.055)
+```
+
+And check if the application is up and running:
+`
+$ http :8080/actuator/health
+`
+
+## Memory consumption
+
+If we run the command `ps -aux | grep 8488`, as `8488` is the application's processor ID(PID):
+
+```
+PID     %CPU    %MEM
+8488    0.2     2.0
+```
+
+## Buildpack
+
+[Buildpack](https://buildpacks.io/) transform your application source code into images that can run on any
+cloud. [Buildpack](https://buildpacks.io/) give a consistent way to create an image of your application. To do that run the command below:
+
+`
+$ mvn spring-boot:build-image
+`
+It will build
