@@ -19,26 +19,26 @@ import java.net.URI;
 @ResponseBody
 public class ProductController {
 
-	private final ProductService service;
+    private final ProductService service;
 
-	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
-	public URI save(@RequestBody ProductRequest request) {
-		log.info("Product request", request);
-		var product = service.save(new Product(request.getName()));
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public URI save(@RequestBody ProductRequest request) {
+        log.info("Product request", request);
+        var product = service.save(new Product(request.getName()));
 
-		return UriComponentsBuilder.newInstance()
-			.scheme("http")
-			.host("localhost")
-			.port("8080")
-			.path("/product/{id}")
-			.buildAndExpand(product.getId()).toUri();
-	}
+        return UriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8080")
+                .path("/product/{id}")
+                .buildAndExpand(product.getId()).toUri();
+    }
 
-	@GetMapping("/{id}")
-	public ProductResponse findBy(@PathVariable Long id) {
-		log.info("Finding product with id {}", id);
-		var product = service.findBy(id).orElseThrow(ProductNotFoundException::new);
-		return new ProductResponse(product.getId(), product.getName());
-	}
+    @GetMapping("/{id}")
+    public ProductResponse findBy(@PathVariable Long id) {
+        log.info("Finding product with id {}", id);
+        var product = service.findBy(id).orElseThrow(ProductNotFoundException::new);
+        return new ProductResponse(product.getId(), product.getName());
+    }
 }

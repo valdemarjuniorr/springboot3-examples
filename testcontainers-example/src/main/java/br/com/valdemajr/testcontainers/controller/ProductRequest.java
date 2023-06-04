@@ -12,5 +12,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ProductRequest {
 
-	private String name;
+    private String name;
 }

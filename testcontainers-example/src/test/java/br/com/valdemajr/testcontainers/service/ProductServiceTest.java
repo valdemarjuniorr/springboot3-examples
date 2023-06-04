@@ -9,27 +9,25 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class ProductServiceTest {
 
-	@Mock
-	private ProductRepository repository;
+    @Mock
+    private ProductRepository repository;
 
-	@InjectMocks
-	private ProductService service;
+    @InjectMocks
+    private ProductService service;
 
-	@Test
-	void save() {
-		var productMock = mock(Product.class);
-		when(repository.save(productMock)).thenReturn(productMock);
+    @Test
+    void save() {
+        var productMock = mock(Product.class);
+        when(repository.save(productMock)).thenReturn(productMock);
 
-		var saved = service.save(productMock);
+        var saved = service.save(productMock);
 
-		assertThat(saved).isEqualTo(productMock);
-		verify(repository).save(productMock);
-	}
+        assertThat(saved).isEqualTo(productMock);
+        verify(repository).save(productMock);
+    }
 }

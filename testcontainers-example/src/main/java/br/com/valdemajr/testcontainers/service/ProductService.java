@@ -13,17 +13,17 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductService {
 
-	private final ProductRepository repository;
+    private final ProductRepository repository;
 
-	public Product save(Product product) {
-		log.info("Saving product {}", product);
-		var saved = repository.save(product);
-		log.info("Saved");
-		return saved;
-	}
+    public Product save(Product product) {
+        log.info("Saving product {}", product);
+        var saved = repository.save(product);
+        log.info("Saved");
+        return saved;
+    }
 
-	public Optional<Product> findBy(Long id) {
-		return repository.findById(id);
-	}
+    public Optional<Product> findBy(Long id) {
+        return repository.findById(id);
+    }
 }
 

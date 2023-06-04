@@ -6,10 +6,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ProductTest {
 
-	@Test
-	void constructor() {
-		var product = new Product("product name");
-		assertThat(product.getName()).isEqualTo("product name");
-		assertThat(product.getId()).isNull();
-	}
+    private static final String PRODUCT_NAME = "product name";
+
+    @Test
+    void constructor() {
+        var product = new Product(PRODUCT_NAME);
+        assertThat(product.getName()).isEqualTo(PRODUCT_NAME);
+        assertThat(product.getId()).isNull();
+    }
 }
