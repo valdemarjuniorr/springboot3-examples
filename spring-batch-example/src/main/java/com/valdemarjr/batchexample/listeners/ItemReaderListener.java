@@ -1,25 +1,26 @@
 package com.valdemarjr.batchexample.listeners;
 
 import com.valdemarjr.batchexample.domain.Coffee;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.annotation.AfterRead;
 import org.springframework.batch.core.annotation.BeforeRead;
 import org.springframework.batch.core.annotation.OnReadError;
 
-public class ItemReaderListener  {
+@Slf4j
+public class ItemReaderListener {
 
-	@BeforeRead
-	public void beforeRead() {
-		System.out.println("Before Read");
-	}
+  @BeforeRead
+  public void beforeRead() {
+    log.info("Before Read");
+  }
 
-	@AfterRead
-	public void afterRead(Coffee coffee) {
-		System.out.println("After Read");
-	}
+  @AfterRead
+  public void afterRead(Coffee coffee) {
+    log.info("After Read");
+  }
 
-	@OnReadError
-	public void onReadError(Exception e) {
-		System.out.println("On Read Error");
-	}
-
+  @OnReadError
+  public void onReadError(Exception e) {
+    log.info("On Read Error");
+  }
 }

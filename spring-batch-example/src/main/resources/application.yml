@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
@@ -16,3 +16,5 @@ spring:
       enabled: false
     jdbc:
       initialize-schema: always
+
+input.file.name: '/Users/valdemar/personal/springboot3-examples/spring-batch-example/src/main/resources/coffee_maker.csv'

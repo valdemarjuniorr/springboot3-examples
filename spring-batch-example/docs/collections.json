@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "34f50b12-2ccf-45e9-8e57-8ce92a810a9b",
+		"name": "Spring Batch Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23857365"
+	},
+	"item": [
+		{
+			"name": "Start Job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"start"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,4 +1,7 @@
-# [Draft] Spring Batch example
+# Spring Batch example
+
+Spring batch example using the [Kaggle dataset](https://www.kaggle.com/datasets/niramay/-coffeemakerclassification?resource=download) about coffee makers.
+It reads from a csv file and writes into a postgresql database.
 
 ## Features
 - Java 17
@@ -43,3 +46,9 @@ $ make start
 ## References
 - [Spring Batch Reference Guide](https://docs.spring.io/spring-batch/docs/current/reference/html/index-single.html#spring-batch-intro)
 - [Data used for this project](https://www.kaggle.com/datasets/niramay/-coffeemakerclassification?resource=download)
+
+## Troubleshooting
+- [[Reference](https://github.com/spring-projects/spring-boot/issues/33526#issuecomment-1413898049)] If I use the annotation `@EnableBatchProcessing`, then the tables are not created. If I omit that annotation, then the tables are created.
+
+# Collections
+To import all endpoints into [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/) check the collection into `docs/collections.json` file.
