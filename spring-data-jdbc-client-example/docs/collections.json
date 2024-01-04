@@ -31,14 +31,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/products",
+					"raw": "http://localhost:8080/products/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"products"
+						"products",
+						"1"
 					]
 				}
 			},
@@ -50,14 +51,15 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/products",
+					"raw": "http://localhost:8080/products/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"products"
+						"products",
+						"1"
 					]
 				}
 			},
