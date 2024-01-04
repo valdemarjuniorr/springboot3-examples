@@ -1,0 +1,13 @@
+request:
+  method: GET
+  url: /products
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    id: 1
+    name: "product name"
+    description: "description"
+  headers:
+    Content-Type: application/json;charset=UTF-8

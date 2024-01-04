@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres!
+      - POSTGRES_USER=postgres!
+      - POSTGRES_DB=jdbc-client-example
+    ports:
+      - "5432:5432"

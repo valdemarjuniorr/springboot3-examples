@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jdbc-client-example
+    username: postgres!
+    password: postgres!
+    driver-class-name: org.postgresql.Driver
