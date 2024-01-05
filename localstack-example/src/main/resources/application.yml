@@ -3,6 +3,9 @@ spring:
   cloud:
     config:
       enabled: false
+  threads:
+    virtual:
+      enabled: true
 
 cloud:
   aws:

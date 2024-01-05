@@ -6,7 +6,6 @@ services:
     ports:
       - "127.0.0.1:4566:4566"            # LocalStack Gateway
     environment:
-      - LOCALSTACK_HOST=localstack
       - SKIP_SSL_CERT_DOWNLOAD=1
       - SERVICES=sns,sqs
       - DOCKER_HOST=unix:///var/run/docker.sock
@@ -14,6 +13,5 @@ services:
       - AWS_ACCESS_KEY_ID=ANUJDEKAVADIYAEXAMPLE
       - AWS_SECRET_ACCESS_KEY=2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
     volumes:
-      - "/tmp/localstack:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./scripts/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook

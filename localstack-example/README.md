@@ -2,10 +2,10 @@
 
 ## Features
 
-- Java 19
+- Java 21
+- Springboot 3.2.1
 - localstack
 - docker-compose
-- Springboot 3.0.5
 
 ## Description
 
@@ -30,7 +30,7 @@ $ chmod +x ./scripts/init-aws.sh
 First clone the project
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:
@@ -96,6 +96,6 @@ collection into `docs/collections.json` file.
 ## Some references
 
 - To check the aws authentication
-  order [here](https://docs.awspring.io/spring-cloud-aws/docs/3.0.0-RC1/reference/html/index.html#credentials.)
-- [IAM Permission](https://docs.awspring.io/spring-cloud-aws/docs/3.0.0-RC1/reference/html/index.html#iam-permissions-4)
+    order [here](https://docs.awspring.io/spring-cloud-aws/docs/3.1.0/reference/html/index.html#credentials).
+- [IAM Permission](https://docs.awspring.io/spring-cloud-aws/docs/3.1.0/reference/html/index.html#iam-permissions-4)
   necessary to send a notification to a topic.

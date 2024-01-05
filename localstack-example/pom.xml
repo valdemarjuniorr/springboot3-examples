@@ -5,17 +5,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.5</version>
+        <version>3.2.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.valdemarjr</groupId>
     <artifactId>localstack-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>localstack-example</name>
     <description>Localstack AWS Spring Boot 3 example</description>
     <properties>
-        <java.version>19</java.version>
-        <spring-cloud.version>2022.0.2</spring-cloud.version>
+        <java.version>21</java.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -45,6 +45,12 @@
             <artifactId>spring-cloud-stream-test-binder</artifactId>
             <scope>test</scope>
         </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-docker-compose</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
         <!-- AWS -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -61,7 +67,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
-            <version>5.3.24</version>
+            <version>5.3.31</version>
         </dependency>
     </dependencies>
     <dependencyManagement>
@@ -77,7 +83,7 @@
     </dependencyManagement>
     <build>
         <plugins>
-            <plugin>
+			<plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
