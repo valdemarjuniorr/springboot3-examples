@@ -21,7 +21,7 @@ and show as below:
 P.s: The `./scripts/init-aws.sh` script is executed when the `docker-compose` starts, and it has to have executed
 permission:
 
-```
+```sh
 $ chmod +x ./scripts/init-aws.sh
 ```
 
@@ -29,24 +29,30 @@ $ chmod +x ./scripts/init-aws.sh
 
 First clone the project
 
-```
+```sh
 $ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
-and then, start the project locally, running the command:
+and then, start the project locally using `local` profile, running the command:
 
-```
+```sh
 $ cd localstack-example
 $ make start
 ```
+If you want to start the project using `aws` profile, run the command:
+
+```sh
+$ make start-aws
+```
+You have to have the aws credentials configured on your machine as environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
 
 ## How to use
 
 There are two endpoints to send and receive messages from the queue. To send a message to a topic `notification-topic`,
 run the curl command:
 
-```
-curl --location 'http://localhost:8080/notify/topic' \
+```sh
+$ curl --location 'http://localhost:8080/notify/topic' \
 --header 'Content-Type: application/json' \
 --data '{
     "from": "Valdemar Jr",
@@ -54,6 +60,7 @@ curl --location 'http://localhost:8080/notify/topic' \
     "content": "Content message"
 }'
 ```
+
 The notification will be sent to the topic and the queue will receive the message. The message structure received towards SNS is:
 ```json
 {

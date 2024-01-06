@@ -1,0 +1,7 @@
+cloud:
+  aws:
+    credentials:
+      access-key: ANUJDEKAVADIYAEXAMPLE
+      secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
+    endpoint:
+      uri: http://localhost:4566

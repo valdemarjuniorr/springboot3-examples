@@ -1,11 +1,9 @@
 package br.com.valdemarjr.localstack.config;
 
-import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.sns.AmazonSNS;
-import com.amazonaws.services.sns.AmazonSNSAsyncClientBuilder;
+import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.cloud.aws.messaging.listener.QueueMessageHandler;
@@ -16,52 +14,45 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@Profile("local")
-public class SQSConfig extends AbstractCloudConfig {
-
-  @Value("${cloud.aws.endpoint.uri}")
-  private String host;
+@Profile("aws")
+public class AWSConfig extends AbstractCloudConfig {
 
   @Bean
   @Primary
-  public AmazonSQSAsync amazonSQSAsync() {
+  public AmazonSQSAsync amazonSQSClient() {
     return AmazonSQSAsyncClientBuilder.standard()
-        .withEndpointConfiguration(getEndpointConfiguration())
         .withCredentials(getCredentialsProvider())
+        .withRegion(region)
         .build();
   }
 
   @Bean
-  public AmazonSNS amazonSNSAsync() {
-    return AmazonSNSAsyncClientBuilder.standard()
-        .withEndpointConfiguration(getEndpointConfiguration())
+  public AmazonSNS snsClient() {
+    return AmazonSNSClientBuilder.standard()
+        .withRegion(region)
         .withCredentials(getCredentialsProvider())
         .build();
   }
 
   @Bean
   public QueueMessagingTemplate queueMessagingTemplate() {
-    return new QueueMessagingTemplate(amazonSQSAsync());
+    return new QueueMessagingTemplate(amazonSQSClient());
   }
 
   /** this bean is responsible for listening to the queue and must be defined. */
   @Bean
   public QueueMessageHandler queueMessageHandler() {
-    var queueMessageHandlerFactory = new QueueMessageHandlerFactory();
-    queueMessageHandlerFactory.setAmazonSqs(amazonSQSAsync());
-    return queueMessageHandlerFactory.createQueueMessageHandler();
+    var queueHandlerFactory = new QueueMessageHandlerFactory();
+    queueHandlerFactory.setAmazonSqs(amazonSQSClient());
+    return queueHandlerFactory.createQueueMessageHandler();
   }
 
   /** this bean is responsible for listening to the queue and must be defined. */
   @Bean
   public SimpleMessageListenerContainer simpleMessageListenerContainer() {
-    var simpleListenerContainer = new SimpleMessageListenerContainer();
-    simpleListenerContainer.setAmazonSqs(amazonSQSAsync());
-    simpleListenerContainer.setMessageHandler(queueMessageHandler());
-    return simpleListenerContainer;
-  }
-
-  private EndpointConfiguration getEndpointConfiguration() {
-    return new EndpointConfiguration(host, region);
+    var listenerContainer = new SimpleMessageListenerContainer();
+    listenerContainer.setAmazonSqs(amazonSQSClient());
+    listenerContainer.setMessageHandler(queueMessageHandler());
+    return listenerContainer;
   }
 }
