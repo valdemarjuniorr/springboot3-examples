@@ -12,13 +12,13 @@ To download the project running:
 
 ```
 $ curl https://start.spring.io/starter.tgz -o spring-boot-3-native.zip -d dependencies=web,actuator,devtools,native
--d groupId=br.com.livelo -d artifactId=spring-boot-3-native -d packageName=br.com.livelo.native
+-d groupId=br.com.valdemarjr -d artifactId=spring-boot-3-native -d packageName=br.com.valdemarjr.native
 -d applicationName=spring-boot-3-native -d name='Springboot 3 native example' -d description='Springboot 3 native example'
 -d type=maven-project
 ```
 
 Or generate
-from [start.spring.io](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.5&packaging=jar&jvmVersion=17&groupId=br.com.livelo&artifactId=spring-boot-3-native&name=spring-boot-3-native&description=Spring%20boot%203%20native%20example&packageName=br.com.livelo.native&dependencies=actuator,web,devtools,native)
+from [start.spring.io](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.5&packaging=jar&jvmVersion=17&groupId=br.com.valdemarjr&artifactId=spring-boot-3-native&name=spring-boot-3-native&description=Spring%20boot%203%20native%20example&packageName=br.com.valdemarjr.native&dependencies=actuator,web,devtools,native)
 template.
 
 ## Commands
