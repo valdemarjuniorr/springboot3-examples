@@ -2,9 +2,9 @@
 
 ## Features
 
-- Java 19
+- Java 21
 - docker-compose
-- Springboot 3.0.4
+- Springboot 3.2.2
 - RabbitMQ 3.11.9
 
 ## Description
@@ -19,7 +19,7 @@ send(produce) to a topic(exchange) and received by two different interessed in t
 First clone the project:
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:
@@ -43,6 +43,6 @@ curl --location 'http://localhost:8080/publish' \
 ```
 
 In application's log you will see that the message was published in `notify.new.user` exchange and consumed
-by `NotifyCompanyConsumer` and `NotifyUserConsumer` consumers, logging respectively: 
+by `NotifyCompanyConsumer` and `NotifyUserConsumer` consumers, logging respectively:
 - `A company received a new user message. Message -> message sent by post request`.
 - `New user received a new message. Message -> message sent by post request`.

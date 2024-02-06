@@ -4,9 +4,9 @@ Spring batch example using the [Kaggle dataset](https://www.kaggle.com/datasets/
 It reads from a csv file and writes into a postgresql database.
 
 ## Features
-- Java 17
+- Java 21
 - postgresql
-- Spring Boot 3.1.3
+- Spring Boot 3.2.2
 
 ## Description
 Spring Batch is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.

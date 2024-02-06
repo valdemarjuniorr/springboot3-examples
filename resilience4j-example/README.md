@@ -2,8 +2,8 @@
 
 ## Features
 
-- Java 19
-- Springboot 3.0.4
+- Java 21
+- Springboot 3.2.2
 
 ## Description
 
@@ -16,7 +16,7 @@ and [Rate limit](https://resilience4j.readme.io/docs/ratelimiter) examples.
 First clone the project:
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:

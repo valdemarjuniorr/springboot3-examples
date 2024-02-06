@@ -3,7 +3,7 @@
 ## Features
 
 - Java 21
-- Springboot 3.2.1
+- Springboot 3.2.2
 - localstack
 - docker-compose
 

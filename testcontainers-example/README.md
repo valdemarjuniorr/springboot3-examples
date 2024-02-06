@@ -2,8 +2,8 @@
 
 ## Features
 
-- Springboot 3.1
-- Java 17
+- Springboot 3.2.2
+- Java 21
 - Postgres
 - docker-compose
 - Testcontainers

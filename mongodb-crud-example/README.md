@@ -2,9 +2,9 @@
 
 ## Features
 
-- Java 19
+- Java 21
 - docker-compose
-- Springboot 3.0.4
+- Springboot 3.2.2
 - MongoBD
 
 ## Description
@@ -16,7 +16,7 @@ A simple CRUD REST implementation with MongoDB where it is possible to create us
 First clone the project
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:

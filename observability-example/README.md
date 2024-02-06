@@ -1,7 +1,7 @@
 # Observability Example
 
-- Java 19
-- Springboot 3.0.4
+- Java 21
+- Springboot 3.2.2
 - Prometheus
 
 ## How to start
@@ -9,7 +9,7 @@
 First clone the project:
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:

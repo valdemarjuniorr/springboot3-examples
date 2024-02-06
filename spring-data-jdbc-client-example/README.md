@@ -2,7 +2,7 @@
 
 ## Features
 - Java 21
-- Spring Boot 3.2.1
+- Spring Boot 3.2.2
 - Spring Data JDBC
 - Docker
 - PostgreSQL

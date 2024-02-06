@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.valdemarjr</groupId>
-    <artifactId>observability</artifactId>
+    <artifactId>observability-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>observability example</name>
     <description>observability example</description>

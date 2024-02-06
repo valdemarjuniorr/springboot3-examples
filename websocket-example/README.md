@@ -1,14 +1,14 @@
 # Websocket example
 
-- Java 19
-- Springboot 3.0.5
+- Java 21
+- Springboot 3.2.2
 
 ## How to start
 
 First clone the project:
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:
@@ -29,4 +29,4 @@ The Connect button will connect to the backend towards [STOMP message protocol](
 fields and hit send. It will send a message throw STOMP message protocol to the backend and send back to the frontend.
 
 Pretty simple! Now, try to open more tabs at the same url, click in Connect button in all tabs, but fill the fields and
-click send. All tabs will receive the message.  
+click send. All tabs will receive the message.

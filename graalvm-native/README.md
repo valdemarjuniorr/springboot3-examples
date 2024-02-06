@@ -6,7 +6,7 @@
 - [mvnd](https://github.com/apache/maven-mvnd)
 - [GraalVM](https://www.graalvm.org/downloads/)
 - [Buildpack](https://buildpacks.io/)
-- Java 19
+- Java 21
 
 To download the project running:
 

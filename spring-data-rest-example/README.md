@@ -1,13 +1,13 @@
 # Springboot Data Rest example
 
 This example is about [Spring Data Rest](https://docs.spring.io/spring-data/rest/docs/current/reference/html/) which it
-is an application that accesses relational JPA data througha [hypermedia-based RESTful](https://spring.io/guides/gs/rest-hateoas) front end. 
+is an application that accesses relational JPA data througha [hypermedia-based RESTful](https://spring.io/guides/gs/rest-hateoas) front end.
 Spring Data REST takes the features of [Spring HATEOAS](https://spring.io/projects/spring-hateoas) and [Spring Data JPA](https://spring.io/projects/spring-data-jpa) and automatically combines them together.
 
 ## Features
 
-- Java 17
-- Springboot 3.0.6
+- Java 21
+- Springboot 3.2.2
 
 ## Description
 
@@ -54,7 +54,7 @@ as follows:
 First clone the project
 
 ```
-$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git 
+$ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:
