@@ -29,6 +29,7 @@ class UserControllerTest {
   private static final String USER_NAME = "Valdemar Jr";
   private static final int USER_AGE = 41;
   private static final int FREQUENCY = 2;
+
   @Mock private UserService service;
 
   @InjectMocks private UserController controller;

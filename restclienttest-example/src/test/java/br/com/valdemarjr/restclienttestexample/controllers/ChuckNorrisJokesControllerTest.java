@@ -1,6 +1,7 @@
 package br.com.valdemarjr.restclienttestexample.controllers;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withBadRequest;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
@@ -20,11 +21,14 @@ class ChuckNorrisJokesControllerTest {
 
   private static final String URL = "https://api.chucknorris.io/jokes/random";
 
-  @Autowired ChuckNorrisJokesController controller;
+  @Autowired
+ ChuckNorrisJokesController controller;
 
-  @Autowired MockRestServiceServer server;
+  @Autowired
+ MockRestServiceServer server;
 
-  @Autowired ObjectMapper objectMapper;
+  @Autowired
+ ObjectMapper objectMapper;
 
   @Test
   void getJoke() throws JsonProcessingException {

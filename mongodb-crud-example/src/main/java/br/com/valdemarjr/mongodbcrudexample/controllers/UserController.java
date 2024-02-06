@@ -27,7 +27,7 @@ public class UserController {
   private final UserService userService;
 
   @GetMapping("/{id}")
-  public UserResponse findBy(@PathVariable("id") String id) {
+  public UserResponse findBy(@PathVariable String id) {
     var user = userService.findBy(id);
     return new UserResponse(user.orElseThrow(UserNotFoundException::new));
   }
@@ -35,7 +35,7 @@ public class UserController {
   @GetMapping
   public List<UserResponse> findAll() {
     var users = userService.findAll();
-    return users.stream().map(UserResponse::new).collect(Collectors.toList());
+    return users.stream().map(UserResponse::new).toList();
   }
 
   @PostMapping
@@ -48,7 +48,7 @@ public class UserController {
 
   @PutMapping("/{id}")
   @ResponseStatus(HttpStatus.OK)
-  public void update(@PathVariable("id") String id, @RequestBody UserRequest request) {
+  public void update(@PathVariable String id, @RequestBody UserRequest request) {
     var user = request.toEntity();
     user.setId(id);
     userService.update(user);
@@ -56,7 +56,7 @@ public class UserController {
   }
 
   @DeleteMapping("/{id}")
-  public UserResponse delete(@PathVariable("id") String id) {
+  public UserResponse delete(@PathVariable String id) {
     var deleted = userService.delete(id);
     log.info("user id {} deleted", id);
     return new UserResponse(deleted);

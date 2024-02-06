@@ -1,5 +1,9 @@
 package br.com.valdemarjr.rabbitmqexample.controllers;
 
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 import br.com.valdemarjr.rabbitmqexample.domain.Message;
 import br.com.valdemarjr.rabbitmqexample.messages.producers.Producer;
 import org.junit.jupiter.api.Test;
@@ -8,10 +12,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class RabbitMQControllerTest {

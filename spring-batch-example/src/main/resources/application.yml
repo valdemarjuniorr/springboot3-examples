@@ -16,5 +16,8 @@ spring:
       enabled: false
     jdbc:
       initialize-schema: always
+  threads:
+    virtual:
+      enabled: true
 
 input.file.name: '/Users/valdemar/personal/springboot3-examples/spring-batch-example/src/main/resources/coffee_maker.csv'

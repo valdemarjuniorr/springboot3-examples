@@ -11,3 +11,7 @@ management:
       enabled: true
     prometheus:
       enabled: true
+spring:
+  threads:
+    virtual:
+      enabled: true

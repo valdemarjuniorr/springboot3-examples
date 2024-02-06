@@ -2,3 +2,7 @@ websocket:
   broker-path: /notify
   destination-prefixes: /app
   stomp-endpoint: /websocket-server
+spring:
+  threads:
+    virtual:
+      enabled: true

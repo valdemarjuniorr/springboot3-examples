@@ -4,3 +4,6 @@ server:
 spring:
   application:
     name: Service B
+  threads:
+    virtual:
+      enabled: true

@@ -1,0 +1,14 @@
+spring:
+  sql.init.mode: always # to create tables using schema.sql and data.sql
+  datasource:
+    url: jdbc:postgresql://postgres:5432/users
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  threads:
+    virtual:
+      enabled: true

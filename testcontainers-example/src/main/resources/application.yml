@@ -2,3 +2,6 @@ spring:
   sql:
     init:
       mode: always
+  threads:
+    virtual:
+      enabled: true

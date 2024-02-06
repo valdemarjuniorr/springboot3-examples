@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class NotifyCompanyConsumer implements Consumer {
 
   @Override
-  @RabbitListener(id ="notify-company", queues = "${events.queues.company.new.user}")
+  @RabbitListener(id = "notify-company", queues = "${events.queues.company.new.user}")
   public void consume(Message message) {
     log.info("A company received a new user message. Message -> {}", message.getContent());
   }

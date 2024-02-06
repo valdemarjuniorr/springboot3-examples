@@ -1,6 +1,9 @@
 spring:
   application:
     name: Service A
+  threads:
+    virtual:
+      enabled: true
 
 service:
   service-b-url: http://localhost:8181/b

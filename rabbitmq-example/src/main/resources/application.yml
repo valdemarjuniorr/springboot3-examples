@@ -4,6 +4,9 @@ spring:
     port: 5672
     username: guest
     password: guest
+  threads:
+    virtual:
+      enabled: true
 
 events:
   exchange: notify.new.user

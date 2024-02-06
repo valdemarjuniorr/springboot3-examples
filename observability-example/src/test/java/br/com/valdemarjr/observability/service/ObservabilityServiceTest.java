@@ -22,4 +22,3 @@ class ObservabilityServiceTest extends AbstractObservabilityTest {
                 .that().hasBeenStarted().hasBeenStopped();
     }
 }
-

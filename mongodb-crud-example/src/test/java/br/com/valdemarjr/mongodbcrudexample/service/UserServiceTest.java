@@ -27,6 +27,7 @@ import static org.mockito.Mockito.when;
 class UserServiceTest {
 
   private static final String USER_ID = "123";
+
   @Mock private UserRepository repository;
 
   @InjectMocks private UserService service;
@@ -57,7 +58,7 @@ class UserServiceTest {
 
     var user = service.findBy(USER_ID);
 
-    assertThat(user.get()).isEqualTo(userMock);
+    assertThat(user).contains(userMock);
     verify(repository).findById(USER_ID);
   }
 
@@ -78,7 +79,7 @@ class UserServiceTest {
 
     var users = service.findAll();
 
-    assertThat(users.size()).isEqualTo(1);
+    assertThat(users).hasSize(1);
     verify(repository).findAll();
   }
 
@@ -126,7 +127,7 @@ class UserServiceTest {
 
     var deleted = service.delete(USER_ID);
 
-    assertThat(deleted).isEqualTo(deleted);
+    assertThat(deleted).isEqualTo(userMock);
     verify(repository).delete(userMock);
   }
 
