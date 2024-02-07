@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("local")
-public class SQSConfig extends AbstractCloudConfig {
+public class LocalStackCloudConfig extends AbstractCloudConfig {
 
   @Value("${cloud.aws.endpoint.uri}")
   private String host;
