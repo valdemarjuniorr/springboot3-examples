@@ -18,7 +18,7 @@ public class NotificationService {
   private final QueueMessagingTemplate messagingTemplate;
 
   public void notifyTopic(NotificationMessage message) {
-    log.info("Notifying topic {}", config.getTopic());
+    log.info("Notifying topic {}", config.getTopic˜());
     notificationTemplate.sendNotification(config.getTopic(), message, "notification");
   }
 

@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgres:
+    image: ankane/pgvector:v0.5.0
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=vector_store
+      - PGPASSWORD=postgres
+    ports:
+      - '5432:5432'

@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost/vector_store
+    driver-class-name: org.postgresql.Driver
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+  threads:
+    virtual:
+      enabled: true
