@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "7d8e94ee-7341-43f3-8a7f-8cf937140120",
+		"name": "Spring AI Ollama Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23857365"
+	},
+	"item": [
+		{
+			"name": "Ask Question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"question\": \"Tell me a joke?\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/ask",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"ask"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
