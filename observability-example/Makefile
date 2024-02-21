@@ -10,4 +10,4 @@ compose-down:
 run:
 	mvnw spring-boot:run
 
-make start: compose-up run
+start: compose-up run
