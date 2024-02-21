@@ -28,14 +28,6 @@ $ cd spring-ai-ollama-example
 $ make start
 ```
 
-## How to use
-
-After that, you can run the application using the command:
-
-```sh
-$ make start
-```
-
 PS.: It might take a while to start, because it is going to download `llama2` model from the internet.
 
 And then, you can run the `curl` command to ask a question to the model:
