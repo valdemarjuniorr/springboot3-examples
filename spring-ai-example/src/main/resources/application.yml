@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   ai:
     openai:
-      api-key: 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
+      api-key: ${OPENAI_API_KEY}
   threads:
     virtual:
       enabled: true
