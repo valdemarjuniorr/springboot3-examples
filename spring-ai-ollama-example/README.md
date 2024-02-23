@@ -10,7 +10,7 @@ To learn more about some concepts, you can check the [references](#references) s
 ## Features
 - Java 21
 - Spring Boot 3.2.2
-- [Spring AI](https://docs.spring.io/spring-ai/reference/) 0.8.0-SNAPSHOT
+- [Spring AI](https://docs.spring.io/spring-ai/reference/) 0.8.0
 - [Ollama](https://ollama.com/)
 
 ## How to start

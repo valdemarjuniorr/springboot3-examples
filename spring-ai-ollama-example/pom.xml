@@ -15,7 +15,7 @@
 	<name>spring-ai-ollama-example</name>
 	<properties>
 		<java.version>21</java.version>
-		<spring-ai.version>0.8.0-SNAPSHOT</spring-ai.version>
+		<spring-ai.version>0.8.0</spring-ai.version>
 	</properties>
 
 	<dependencies>
