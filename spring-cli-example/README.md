@@ -17,7 +17,7 @@ cd $HOME/temp/spring-cli
 and then, to make it available in your system, create an alias like this:
 
 ```bash
-alias spring='java -jar $HOME/temp/spring-cli/build/libs/spring-cli-0.8.1.jar'
+$ alias spring='java -jar $HOME/temp/spring-cli/build/libs/spring-cli-0.8.1.jar'
 ```
 
 ## Project Structure
@@ -84,14 +84,14 @@ When you run `spring project list` you will see the list of available projects i
 After adding those project templates, you will be able to create a new project. To do this, run the following command, for example to use `web` template:
 
 ```bash
-spring boot new <PROJECT_NAME> web
+$ spring boot new <PROJECT_NAME> web
 ```
 
 ### Adding a template to a new project
 If you have an existing project, and you want to add a new template to it, you can run the following command:
 
 ```bash
-spring boot add test-containers
+$ spring boot add test-containers
 ```
 It will add the `test-containers` template to the existing project.
 
