@@ -22,7 +22,7 @@ alias spring='java -jar $HOME/temp/spring-cli/build/libs/spring-cli-0.8.1.jar'
 
 ## Project Structure
 
-First of you need to create a project catalog configuration file
+First of all, you need to create a project catalog configuration file
 named `project-catalog.yml`. This file contains the list of available templates
 and their respective repositories. Here is an example of a `project-catalog.yml`
 file:
