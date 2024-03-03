@@ -8,6 +8,10 @@ compose-down:
 
 # execute build and run the application
 run:
-	mvnw spring-boot:run
+	mvn spring-boot:run
 
 start: compose-up run
+
+start-native:
+	mvn -Pnative native:compile
+	./target/observability-example

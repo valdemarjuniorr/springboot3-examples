@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: product-group-id
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      # this is necessary to serialize/deserialize the messages
+      properties.spring.json.trusted.packages: br.com.valdemar.kafkaexample.domain
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  threads:
+    virtual:
+      enabled: true
+
+kafka:
+  topic: product-topic
+

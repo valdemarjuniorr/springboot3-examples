@@ -12,3 +12,7 @@ run:
 
 # start the container and run the application
 start: compose-up dw-model run
+
+start-native: compose-up dw-model
+	mvn -Pnative native:compile
+	./target/spring-ai-example
