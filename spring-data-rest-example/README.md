@@ -7,11 +7,11 @@ Spring Data REST takes the features of [Spring HATEOAS](https://spring.io/projec
 ## Features
 
 - Java 21
-- Springboot 3.2.2
+- Springboot 3.2.3
 
 ## Description
 
-In this example we have a relational in memory database as below:
+In this example, we have a relational in memory database as below:
 
 ![data-base.png](assets%2Fdata-base.png)
 
@@ -53,16 +53,23 @@ as follows:
 
 First clone the project
 
-```
+```bash
 $ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:
 
-```
+```bash
 $ cd spring-data-rest-example
 $ make start
 ```
+
+You can start the project with native image with the command:
+```bash
+$ make native-start
+```
+
+With Native Image, applications can run faster, use less memory, and be more secure as shown [here](https://github.com/valdemarjuniorr/spring-boot-graalvm-performance-comparation).
 
 ## HAL Explorer
 Because of the `spring-data-rest-hal-explorer` dependency is enabling the HAL Explorer in [localhost:8080](http://localhost:8080/api) to help with requests and responses, as below:
