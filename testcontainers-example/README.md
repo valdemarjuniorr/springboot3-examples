@@ -2,7 +2,7 @@
 
 ## Features
 
-- Springboot 3.2.2
+- Springboot 3.2.3
 - Java 21
 - Postgres
 - docker-compose
@@ -16,8 +16,7 @@ In this example, I am using one of the new features of Springboot 3.1 which is
 and [Testcontainers](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.1-Release-Notes#testcontainers).
 
 ### Docker-compose integration
-
-When your app is starting up, the Docker Compose integration will look for a configuration file in the current working directory. The following files are supported:
+When our app is starting up, the Docker Compose integration will look for a configuration file in the current working directory. The following files are supported:
 
 - `docker-compose.yml` (case for this example)
 - `compose.yaml`
@@ -35,20 +34,38 @@ There is a class called `TestContainersConfigurationApplication`, which it is se
 
 First clone the project
 
-```
+```bash
 $ git clone git@github.com:valdemarjuniorr/springboot3-examples.git
 ```
 
 and then, start the project locally, running the command:
 
-```
+```bash
 $ cd testcontainers-example
 $ make start
 ```
 
+You can start the project with native image with the command:
+```bash
+$ make native-start
+```
+With Native Image, applications can run faster, use less memory, and be more secure as shown [here](https://github.com/valdemarjuniorr/spring-boot-graalvm-performance-comparation).
+
 ## How to use
 To enable [docker-compose integration](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.1-Release-Notes#testcontainers) you need to add `spring-boot-docker-compose` dependency. Before the application starts, it will run the container.
 In case of [Testcontainers](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.1-Release-Notes#testcontainers) it necessary to remove `docker-compose` dependencies. The file `TestContainersConfigurationApplication` configure is the file which you should start the application from.
+
+## How to test
+
+To make sure that the application is running, you can run the following command:
+
+```bash
+curl --location 'http://localhost:8080/products' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "PS 5 with 2 controllers"
+}'
+```
 
 ## References
 

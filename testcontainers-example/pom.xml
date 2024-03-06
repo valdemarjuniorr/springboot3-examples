@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version>
+        <version>3.2.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.valdemajr</groupId>
@@ -15,6 +15,10 @@
     <description>Spring boot example using testcontainers for integration tests and local development</description>
     <properties>
         <java.version>21</java.version>
+		<!-- Use hibernate-core 6.4.2.Final to avoid issues with GraalVM native image
+			https://github.com/spring-projects/spring-boot/releases/tag/v3.2.3
+		-->
+		<hibernate.version>6.4.2.Final</hibernate.version>
     </properties>
     <dependencies>
         <dependency>
@@ -56,12 +60,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
@@ -82,10 +80,16 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.graalvm.buildtools</groupId>
-                <artifactId>native-maven-plugin</artifactId>
-            </plugin>
+			<plugin>
+				<groupId>org.graalvm.buildtools</groupId>
+				<artifactId>native-maven-plugin</artifactId>
+				<configuration>
+					<buildArgs>
+						<!-- Speed up native builds for development purposes only -->
+						<buildArg>-Ob</buildArg>
+					</buildArgs>
+				</configuration>
+			</plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

@@ -3,20 +3,17 @@ package br.com.valdemajr.testcontainers.controller;
 import br.com.valdemajr.testcontainers.domain.Product;
 import br.com.valdemajr.testcontainers.exception.ProductNotFoundException;
 import br.com.valdemajr.testcontainers.service.ProductService;
+import java.net.URI;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.net.URI;
-
 @Slf4j
-@Controller
+@RestController
 @RequiredArgsConstructor
-@RequestMapping("/product")
-@ResponseBody
+@RequestMapping("/products")
 public class ProductController {
 
     private final ProductService service;
@@ -25,13 +22,13 @@ public class ProductController {
     @ResponseStatus(HttpStatus.CREATED)
     public URI save(@RequestBody ProductRequest request) {
         log.info("Product request", request);
-        var product = service.save(new Product(request.getName()));
+        var product = service.save(new Product(request.name()));
 
         return UriComponentsBuilder.newInstance()
                 .scheme("http")
                 .host("localhost")
                 .port("8080")
-                .path("/product/{id}")
+                .path("/products/{id}")
                 .buildAndExpand(product.getId()).toUri();
     }
 

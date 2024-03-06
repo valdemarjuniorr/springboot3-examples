@@ -80,6 +80,16 @@
 
     <build>
         <plugins>
+			<plugin>
+				<groupId>org.graalvm.buildtools</groupId>
+				<artifactId>native-maven-plugin</artifactId>
+				<configuration>
+					<buildArgs>
+						<!-- Speed up native builds for development purposes only -->
+						<buildArg>-Ob</buildArg>
+					</buildArgs>
+				</configuration>
+			</plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

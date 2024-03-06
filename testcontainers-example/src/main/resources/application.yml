@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    username: postgres!
+    password: postgres!
+    url: jdbc:postgresql://localhost/product
+    driver-class-name: org.postgresql.Driver
   sql:
     init:
       mode: always
