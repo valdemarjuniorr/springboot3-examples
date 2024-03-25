@@ -1,0 +1,25 @@
+server.port: 8082
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://localhost:8080
+        registration:
+          spring:
+            provider: spring
+            client-id: client
+            client-secret: example # value set in client-secret in an authorization-server project
+            authorization-grant-type: authorization_code
+            client-authentication-method: client_secret_basic
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}" # RegistrationId is spring from spring.provider field
+            scope:
+              - user.read
+              - openid
+  threads:
+    virtual:
+      enabled: true
+
+logging.level.org.springframework.security: TRACE
