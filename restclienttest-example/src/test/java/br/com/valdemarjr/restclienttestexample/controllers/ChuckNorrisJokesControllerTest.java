@@ -21,14 +21,9 @@ class ChuckNorrisJokesControllerTest {
 
   private static final String URL = "https://api.chucknorris.io/jokes/random";
 
-  @Autowired
- ChuckNorrisJokesController controller;
-
-  @Autowired
- MockRestServiceServer server;
-
-  @Autowired
- ObjectMapper objectMapper;
+  @Autowired ChuckNorrisJokesController controller;
+  @Autowired MockRestServiceServer server;
+  @Autowired ObjectMapper objectMapper;
 
   @Test
   void getJoke() throws JsonProcessingException {
