@@ -1,0 +1,21 @@
+services:
+  redis:
+    image: "bitnami/redis"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "6379:6379"
+    networks:
+      - app-tier
+  redis-sentinel:
+    image: "bitnami/redis-sentinel"
+    environment:
+      - REDIS_MASTER_HOST=localhost
+      - REDIS_SENTINEL_RESOLVE_HOSTNAMES=yes
+    ports:
+      - "26379:26379"
+    networks:
+      - app-tier
+networks:
+  app-tier:
+    driver: bridge

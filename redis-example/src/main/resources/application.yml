@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: redis-example
+  data:
+    redis:
+      sentinel:
+        master: mymaster
+        nodes:
+          - redis://localhost:26379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 5 # in seconds
+  threads:
+    virtual:
+      enabled: true
