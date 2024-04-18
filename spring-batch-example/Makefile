@@ -1,3 +1,3 @@
 # execute build and run the application with "local" profile
 start:
-	mvn spring-boot:run -Dspring-boot.run.profiles=local
+	./mvnw spring-boot:run -Dspring-boot.run.profiles=local

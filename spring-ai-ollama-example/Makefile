@@ -8,11 +8,11 @@ dw-model:
 
 # execute build and run the application with "local" profile
 run:
-	mvn spring-boot:run -Dspring-boot.run.profiles=local
+	./mvnw spring-boot:run -Dspring-boot.run.profiles=local
 
 # start the container and run the application
 start: compose-up dw-model run
 
 start-native: compose-up dw-model
-	mvn -Pnative native:compile
+	./mvnw -Pnative native:compile
 	./target/spring-ai-example
