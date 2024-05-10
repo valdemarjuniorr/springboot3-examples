@@ -3,13 +3,19 @@ server.port: 8888
 spring:
   application:
     name: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     refresh:
-      enabled: false # This configuration is necessary to generate native images as described here https://github.com/spring-cloud/spring-cloud-config/issues/2365#issuecomment-1849992111
+      enabled: true # This configuration is necessary to generate native images as described here https://github.com/spring-cloud/spring-cloud-config/issues/2365#issuecomment-1849992111
     config:
       server:
         git:
           uri: https://github.com/valdemarjuniorr/general-configuration-server
+      enabled: false # Temporary!
   threads:
     virtual:
       enabled: true

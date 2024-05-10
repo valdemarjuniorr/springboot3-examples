@@ -1,6 +1,14 @@
 spring:
+  application:
+      name: config-client
   config:
     import: 'configserver:http://localhost:8888/'
   threads:
     virtual:
       enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -46,10 +46,18 @@ It will show the configuration properties in JSON format as below:
     {
       "name": "https://github.com/valdemarjuniorr/general-configuration-server/application.yml",
       "source": {
-        "api.chucknorris": "https://api.chucknorris.io/"
+        "api.chucknorris": "https://api.chucknorris.io/jokes/random"
       }
     }
   ]
 }
 ```
-The property `api.chucknorris` is the configuration centralized in [general-configuration-server](https://github.com/valdemarjuniorr/general-configuration-server/) repository.
+In case you want to refresh the configuration of all services which are connected to the Config Server, you can use the following command:
+
+```shell
+$ curl --request POST 'http://localhost:8888/actuator/busrefresh' \
+--header 'Content-Type: application/json'
+```
+
+## References
+- [Refreshable configuration with Spring Cloud Bus, and the Spring Cloud Config Monitor](https://youtu.be/aC_siBP8rx8?si=bDz97eGOGeLPVnH2)
