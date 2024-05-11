@@ -5,6 +5,11 @@
 This is a project to demonstrate how to use the [Spring Cloud Config Server](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/).
 The general configuration is centralized in [general-configuration-server](https://github.com/valdemarjuniorr/general-configuration-server/) repository and exposed by Spring Actuator.
 
+In this example there are two ways to get configuration values from the Config Server:
+ - [Environment](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/env/Environment.html) class, as we can see in [Controller](./config-client/src/main/java/br/com/valdemarjr/web/controllers/Controller.java)
+ - [Value](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html) annotation, as we can see in [RefreshScopeController](./config-client/src/main/java/br/com/valdemarjr/web/controllers/RefreshScopeController.java)
+In this case, the [RefreshScope](https://docs.spring.io/spring-cloud-commons/docs/current/api/org/springframework/cloud/context/refresh/RefreshScope.html) annotation is necessary to refresh the configuration values at runtime.
+
 ## Features
 - Java 22
 - Spring Boot 3.3.0-RC1
