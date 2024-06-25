@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: modulith-example
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+  docker:
+    compose:
+      lifecycle-management: start_only # Start the container once
+  modulith:
+    republish-outstanding-events-on-restart: true
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true
+  sql:
+    init:
+      mode: always
+  threads:
+    virtual:
+      enabled: true
