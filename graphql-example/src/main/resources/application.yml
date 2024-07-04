@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: graphql-example
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+  sql:
+    init:
+      mode: always
+  threads:
+    virtual:
+      enabled: true

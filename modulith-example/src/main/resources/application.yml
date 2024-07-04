@@ -2,7 +2,7 @@ spring:
   application:
     name: modulith-example
   datasource:
-    url: jdbc:postgresql://localhost:5432/mydatabase
+    master.url: jdbc:postgresql://localhost:5432/mydatabase
     username: myuser
     password: secret
   docker:

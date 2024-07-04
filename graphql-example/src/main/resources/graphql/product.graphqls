@@ -1,0 +1,15 @@
+type ProductResponse {
+    id: ID
+    price: Float
+    name: String
+}
+
+type Query {
+    findAll: [ProductResponse]
+    findById(id: ID!): ProductResponse
+}
+
+type Mutation {
+    save(name: String!, price: Float!): ProductResponse
+    delete(id: ID!): ID!
+}
