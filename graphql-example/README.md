@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is aΩ CRUD example of how to use GraphQL with Spring Boot. We have a simple record `Product` with the following fields `id`, `name`, and `price`.
+This project is a CRUD example of how to use GraphQL with Spring Boot. We have a simple record `Product` with the following fields `id`, `name`, and `price`.
 In this example we have `Query` and `Mutation` to get and create products. The schema is defined in the `product.graphqls` file.
 
 ## Features
