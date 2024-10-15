@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is aΩ CRUD example of how to use GraphQL with Spring Boot. We have a simple record `Product` with the following fields `id`, `name`, and `price`.
+This project is a CRUD example of how to use GraphQL with Spring Boot. We have a simple record `Product` with the following fields `id`, `name`, and `price`.
 In this example we have `Query` and `Mutation` to get and create products. The schema is defined in the `product.graphqls` file.
 
 ## Features
@@ -34,10 +34,10 @@ shown [here](https://github.com/valdemarjuniorr/spring-boot-graalvm-performance-
 
 After starting the application, you can open [Postman](https://www.postman.com/) and create `Query` as
 described [here](https://learning.postman.com/docs/sending-requests/graphql/graphql-client-first-request/),
-and set the URL to `http://localhost:8080/graphql`.
+and set the URL to [http://localhost:8080/graphql](http://localhost:8080/graphql).
 
 Another way to test the application is to use the [GraphiQL](https://www.electronjs.org/apps/graphiql) tool. You can access it by opening the browser
-and typing `http://localhost:8080/graphiql` and you can try using queries and mutations, as shown below:
+and typing [http://localhost:8080/graphiql](http://localhost:8080/graphiql) and you can try using queries and mutations, as shown below:
 
 ![graphiql-screen.png](assets/graphiql-screen.png)
 
