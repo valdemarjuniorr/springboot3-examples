@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.min.js"></script>
+    <title>Todos</title>
+</head>
+<body>
+<h2>
+    Todos
+</h2>
+<div th:fragment="todos" class="todos-list">
+
+    <div th:each="todo : ${todos}" class="todo">
+        <button
+                th:attr="hx-delete=@{/todos/{id}(id=${todo.id}) }"
+                hx-confirm="Are you sure?"
+                hx-trigger="click"
+                hx-target="closest .todo">Delete
+        </button>
+        | <span th:text="${todo.id}">ID</span> | <span th:text="${todo.description}">Description</span>
+    </div>
+</div>
+
+<div id="todos-form" th:fragment="todos-form" hx-swap-oob="true">
+    <h2>Add a Todo</h2>
+
+    <input id="new-todo" type="text" name="new-todo"/>
+
+    <button
+            hx-post="/todos"
+            hx-include="#new-todo"
+            hx-target=".todos-list"
+            hx-trigger="click">Add
+    </button>
+</div>
+
+</body>
+</html>
