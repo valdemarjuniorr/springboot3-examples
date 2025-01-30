@@ -3,7 +3,7 @@ spring:
     ollama:
       chat:
         options:
-          model: llama2
+          model: deepseek-r1:671b
 
   threads:
     virtual:

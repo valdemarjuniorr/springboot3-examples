@@ -4,7 +4,7 @@ compose-up:
 
 # download the llama2 model
 dw-model:
-	docker exec -it ollama bash -c 'ollama pull llama2'
+	docker exec -it ollama bash -c 'ollama pull deepseek-r1:671b'
 
 # execute build and run the application with "local" profile
 run:
