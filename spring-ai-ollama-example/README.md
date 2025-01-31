@@ -28,7 +28,7 @@ $ cd spring-ai-ollama-example
 $ make start
 ```
 
-PS.: It might take a while to start, because it is going to download `llama2` model from the internet.
+PS.: It might take a while to start, because it is going to download `deepseek-r1` model from the internet.
 
 And then, you can run the `curl` command to ask a question to the model:
 
