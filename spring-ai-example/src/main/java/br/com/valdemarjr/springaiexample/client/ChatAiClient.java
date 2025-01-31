@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.ai.chat.ChatClient;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.SystemPromptTemplate;
@@ -22,9 +22,9 @@ public class ChatAiClient {
   private final VectorStore vectorStore;
   private final ChatClient chatClient;
 
-  public ChatAiClient(VectorStore vectorStore, ChatClient chatClient) {
+  public ChatAiClient(VectorStore vectorStore, ChatClient.Builder builder) {
     this.vectorStore = vectorStore;
-    this.chatClient = chatClient;
+    this.chatClient = builder.build();
   }
 
   public String chat(String question) {
@@ -48,13 +48,14 @@ public class ChatAiClient {
     var listOfSimilarDocs = this.vectorStore.similaritySearch(question);
     var docs =
         listOfSimilarDocs.stream()
-            .map(Document::getContent)
+            .map(Document::getText)
             .collect(Collectors.joining(System.lineSeparator()));
 
     var systemMessage = new SystemPromptTemplate(template).createMessage(Map.of("documents", docs));
     var userMessage = new UserMessage(question);
     var promptList = new Prompt(List.of(systemMessage, userMessage));
-    var aiResponse = this.chatClient.call(promptList);
-    return aiResponse.getResult().getOutput().getContent();
+
+    return this.chatClient.prompt(promptList).call().content();
+
   }
 }

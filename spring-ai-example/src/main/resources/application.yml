@@ -5,6 +5,9 @@ spring:
     url: jdbc:postgresql://localhost/vector_store
     driver-class-name: org.postgresql.Driver
   ai:
+    vectorstore:
+      pgvector:
+        initialize-schema: true
     openai:
       api-key: ${OPENAI_API_KEY}
   threads:

@@ -8,9 +8,9 @@ use [Retrieval Augmented Generation (RAG)](https://blogs.nvidia.com/blog/what-is
 To learn more about some concepts, you can check the [references](#references) section.
 
 ## Features
-- Java 21
-- Spring Boot 3.2.2
-- [Spring AI](https://docs.spring.io/spring-ai/reference/) 0.8.0
+- Java 2.3
+- Spring Boot 3.4.x
+- [Spring AI](https://docs.spring.io/spring-ai/reference/) 1.0.0-SNAPSHOT 
 - [PostgreSQL pgVector](https://github.com/pgvector/pgvector)
 
 ## How to start

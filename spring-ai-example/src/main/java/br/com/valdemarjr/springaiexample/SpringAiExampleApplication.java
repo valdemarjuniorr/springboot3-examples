@@ -1,8 +1,6 @@
 package br.com.valdemarjr.springaiexample;
 
 import br.com.valdemarjr.springaiexample.service.SetupService;
-import org.springframework.ai.chat.ChatClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +17,7 @@ public class SpringAiExampleApplication {
 
   @Bean
   ApplicationRunner applicationRunner() {
-    return args -> setupService.init();
+    return _ -> setupService.init();
   }
 
   public static void main(String[] args) {
