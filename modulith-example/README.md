@@ -11,9 +11,9 @@ An interesting feature of Spring Modulith is the ability to register [event publ
 
 # Features
 - Docker
-- Java 22
-- Spring Boot 3.3.1
-- Spring Modulith 1.2.0
+- Java 23
+- Spring Boot 3.4.2
+- Spring Modulith 1.3.1
 - Postgres
 - RabbitMQ
 

@@ -2,18 +2,18 @@ spring:
   application:
     name: modulith-example
   datasource:
-    master.url: jdbc:postgresql://localhost:5432/mydatabase
+    url: jdbc:postgresql://localhost:5432/mydatabase
     username: myuser
     password: secret
   docker:
     compose:
       lifecycle-management: start_only # Start the container once
   modulith:
-    republish-outstanding-events-on-restart: true
     events:
       jdbc:
         schema-initialization:
           enabled: true
+      republish-outstanding-events-on-restart: true
   sql:
     init:
       mode: always

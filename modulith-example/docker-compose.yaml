@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: 'postgres:latest'
+    image: postgres
     environment:
       - 'POSTGRES_DB=mydatabase'
       - 'POSTGRES_PASSWORD=secret'
@@ -8,9 +8,9 @@ services:
     ports:
       - '5432:5432'
   rabbitmq:
-    image: 'rabbitmq:latest'
+    image: rabbitmq
     environment:
       - 'RABBITMQ_DEFAULT_PASS=secret'
       - 'RABBITMQ_DEFAULT_USER=myuser'
     ports:
-      - '5672'
+      - '5672:5672'

@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.valdemarjr.modulith-example</groupId>
@@ -15,8 +15,8 @@
     <description>Spring Modulith Example</description>
 
     <properties>
-        <java.version>22</java.version>
-        <spring-modulith.version>1.2.0</spring-modulith.version>
+        <java.version>23</java.version>
+        <spring-modulith.version>1.3.2</spring-modulith.version>
     </properties>
     <dependencies>
         <dependency>
@@ -47,7 +47,6 @@
             <groupId>org.springframework.modulith</groupId>
             <artifactId>spring-modulith-events-amqp</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
