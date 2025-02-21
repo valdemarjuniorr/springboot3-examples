@@ -8,9 +8,9 @@ going to interact with [Large Language Model(LLM)](https://aws.amazon.com/what-i
 To learn more about some concepts, you can check the [references](#references) section.
 
 ## Features
-- Java 21
-- Spring Boot 3.2.2
-- [Spring AI](https://docs.spring.io/spring-ai/reference/) 0.8.0
+- Java 23
+- Spring Boot 3.4.3
+- [Spring AI](https://docs.spring.io/spring-ai/reference/) 1.0.0-SNAPSHOT
 - [Ollama](https://ollama.com/)
 
 ## How to start
