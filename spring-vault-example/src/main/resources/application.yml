@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-vault-example
+  config:
+    import: vault://
+  cloud:
+    vault:
+      enabled: true
+      scheme: http
+      uri: http://localhost:8200 # default url
+      # Authetication - token based
+      authetication: TOKEN
+      token: myroot # the same as defined in docker-compose property
+      # key-value V2 backend (Vault's defaults)
+      kv:
+        enabled: true
+        backend: secret # secret value is the bucket name:w used in secret/spring-vault-example example
+        default-conext: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
