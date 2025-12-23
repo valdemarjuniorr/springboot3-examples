@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: datarestexample
+
+  data:
+    rest:
+      defaultPageSize: 10 # Default 20
+      maxPageSize: 10
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  threads:
+    virtual:
+      enabled: true

@@ -1,7 +1,8 @@
 package br.com.valdemarjr.datarestexample.repository;
 
-import br.com.valdemarjr.datarestexample.domain.Department;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface DepartmentRepository extends JpaRepository<Department, Long> {
+import br.com.valdemarjr.datarestexample.domain.Department;
+
+public interface DepartmentRepository extends CrudRepository<Department, Long> {
 }

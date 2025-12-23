@@ -6,8 +6,8 @@ Spring Data REST takes the features of [Spring HATEOAS](https://spring.io/projec
 
 ## Features
 
-- Java 21
-- Springboot 3.2.3
+- Java 25
+- Springboot 4.0.x
 
 ## Description
 
@@ -34,10 +34,10 @@ as follows:
   },
   "_links": {
     "self": {
-      "href": "http://localhost:8080/api/products"
+      "href": "http://localhost:8080/products"
     },
     "profile": {
-      "href": "http://localhost:8080/api/profile/products"
+      "href": "http://localhost:8080/profile/products"
     }
   },
   "page": {
