@@ -1,6 +1,6 @@
 spring:
   application:
-    name: datarestexample
+    name: spring-data-rest-example
 
   data:
     rest:
